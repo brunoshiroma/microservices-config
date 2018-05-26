@@ -10,8 +10,6 @@ eureka:
     serviceUrl:
       defaultZone: http://192.168.1.148:8761/eureka/
 
-hystrix.threadpool.default.coreSize: 100
-
 spring.zipkin.baseUrl: http://bruno-vbox.local:9411/
 spring.zipkin.sender.type: web
 spring.sleuth.web.skipPattern: ".*metrics.*"
@@ -19,16 +17,3 @@ spring.sleuth.web.skipPattern: ".*metrics.*"
 spring.sleuth.sampler.percentage: 1
 spring.sleuth.integration.enabled: false
 #feign.hystrix.enabled: true
-
----
-spring:
-  profiles: docker
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    serviceUrl:
-      defaultZone: http://discovery-service:8761/eureka/
-
-server:
-  port: 8080
