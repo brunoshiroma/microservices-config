@@ -13,21 +13,3 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
----
-spring:
-  profiles: docker
-  sleuth:
-    sampler:
-      percentage: 1.0
-  zipkin:
-    baseUrl: http://bruno-vbox.local:9411/zipkin/
-eureka:
-  server:
-    enableSelfPreservation: false 
-  instance:
-    hostname: discovery-service
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ 
