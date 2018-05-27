@@ -33,18 +33,3 @@ spring.sleuth.web.skipPattern: ".*metrics.*"
 
 spring.sleuth.sampler.percentage: 1
 spring.sleuth.integration.enabled: false
-        
----
-spring:
-  profiles: docker
-  sleuth:
-    sampler:
-      percentage: 1.0
-  zipkin:
-    baseUrl: http://bruno-vbox.local:9411/zipkin/
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    serviceUrl:
-      defaultZone: http://discovery-service:8761/eureka/
